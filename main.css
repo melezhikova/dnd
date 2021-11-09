@@ -1,0 +1,167 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: #999;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  padding: 30px;
+  background-color: rgb(22, 165, 110);
+}
+
+.section {
+  background-color: rgb(116, 231, 183);
+  height: 80%;
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.inProgress {
+  margin: 0 10px;
+}
+
+.sectionName {
+  margin: 10px 0;
+}
+
+.task {
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: grab;
+}
+
+.task:active { 
+  cursor: grabbing;
+}
+
+.active {
+  background-color: #cef1bd;
+}
+
+.dragged {
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.task:active { 
+  cursor: grabbing;
+}
+
+.shaded::after {
+  content: '';
+  background-color: rgb(69, 231, 164);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.taskDelete {
+  display: none;
+}
+
+.visible {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #a8df8d;
+  border: none;
+  padding: 0;
+  margin: 2px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.visible::before, .visible::after {
+  width: 1.2em;
+  height: 0.15em;
+  content: "";
+  background-color: gray;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.visible::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.visible::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.addbtn {
+  margin-top: 15px;
+  color: gray;
+}
+
+.inputTask {
+ width: 100%;
+ min-height: 60px;
+ border: none;
+ border-radius: 5px;
+ margin-bottom: 5px;
+ padding: 10px;
+ box-sizing: border-box;
+}
+
+.buttonsBox {
+  display: flex;
+  align-items: center;
+}
+
+.addButton {
+  font-weight: bold;
+  color: #f8f9fa;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 10px;
+  margin-right: 10px;
+  background-color: rgb(55, 197, 55);
+  cursor: pointer;
+}
+
+.cancelButton {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.cancelButton::before, .cancelButton::after {
+  width: 1.2em;
+  height: 0.15em;
+  content: "";
+  background-color: gray;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.cancelButton::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.cancelButton::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
